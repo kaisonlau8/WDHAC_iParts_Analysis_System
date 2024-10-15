@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: my_mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpw
+    ports:
+      - "3306:3306"
+    networks:
+      - my_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.1
+    container_name: my_phpmyadmin
+    environment:
+      PMA_HOST: my_mariadb
+      PMA_ARBITRARY: 1
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true

@@ -1,0 +1,9 @@
+{
+    "db_config": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "mysecretpw",
+        "charset": "utf8mb4"
+    },
+    "csv_file_path": "/Users/i/myCode/WDHAC_iParts_Analysis_System/details_export_csv/test.CSV"
+}
