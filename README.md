@@ -21,8 +21,15 @@
 ```
 
 ## 4 安装指南
-1. `docker create network my_network`
-2. `docker-compose up -d`
+```
+git clone https://github.com/kaisonlau8/WDHAC_iParts_Analysis_System.git
+```
+```
+docker create network my_network
+```
+```
+docker-compose up -d
+```
 
 ## 5 使用指南
 ### 5.1 dataImport组件
