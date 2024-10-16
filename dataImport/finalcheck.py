@@ -2,14 +2,15 @@
 import pymysql
 from datetime import datetime
 import re
+import json
 
-# 数据库连接信息
-db_config = {
-    "host": "127.0.0.1",
-    "user": "root",
-    "password": "mysecretpw",
-    "database": "iparts"
-}
+# 读取配置文件
+config_file_path = 'config.json'
+with open(config_file_path, 'r') as file:
+    config = json.load(file)
+# 从配置文件中获取数据库连接信息
+db_config = config['db_config']
+db_config['database'] = 'iparts' # 设置要连接的数据库
 
 # 创建数据库连接
 connection = pymysql.connect(**db_config)
